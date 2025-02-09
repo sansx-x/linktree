@@ -1,0 +1,259 @@
+/* Modo oscuro */
+.dark-mode {
+    background-color: #121212;
+    color: #d33838;
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-family: "Noto Sans Devanagari", tahoma;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.titulo:hover{
+    transform: scale(1.1);
+}
+
+.titulo {
+    
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.titulo:hover {
+    opacity: 0.7;
+}
+
+
+/* Botón */
+.boton {
+    min-width: 120px;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 17px;
+    border: 0;
+    border-radius: 7px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: radial-gradient(
+        ellipse at bottom,
+        rgba(71, 81, 92, 1) 0%,
+        rgba(11, 21, 30, 1) 45%
+    );
+    color: rgba(255, 255, 255, 0.66);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.boton::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.05) translateY(-3px);
+}
+
+.boton:hover::before {
+    opacity: 1;
+}
+
+/* Categorías */
+.categorias, .categorias2, .categorias3 {
+    text-align: center;
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: colorChange 3s infinite alternate;
+}
+
+.eche:hover {
+    transform: scale(1.1);
+}
+
+.categorias2, .categorias3, .categorias {
+    background-color: #f41212;
+    font-family: "Oswald", serif;
+    animation: colorChangeBg 3s infinite alternate;
+    text-align: center;
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes colorChangeBg {
+    0% {
+        background-color: #fefefe;
+    }
+    50% {
+        background-color: #c0f110;
+    }
+    100% {
+        background-color: #54d0b9;
+    }
+}
+
+/* Estilo común de categorías al pasar el mouse */
+.categorias:hover, .categorias2:hover, .categorias3:hover {
+    background-color: #444;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto dentro de categorías */
+.eche {
+    color: #20fff0;
+    text-align: center;
+    animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ffffff;
+    }
+    50% {
+        color: #94c89e;
+    }
+    100% {
+        color: #182118;
+    }
+}
+
+
+/* Párrafos */
+p {
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, serif;
+    margin: 10px 0;
+}
+
+/* Imágenes */
+img {
+    text-align: center;
+    border-radius: 44px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo del cuerpo */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    gap: 16px;
+    transition: 0.3s;
+}
+.container li{
+    position: relative;
+    overflow:hidden;
+    flex: 0 0 80px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+.container li img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 120%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.container li img {
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 2px;
+    background-color: #1e293b;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    background-color: #1e293b;
+}
+
+.container li,
+.container li img
+{
+    transition: 0.3s;
+}
+
+.container li .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: #fff;
+    padding: 15px;
+    background:
+    linear-gradient(
+        0deg, rgb(0 0 0 / 70%) 10%,
+            rgb(255 255 255 / 0%) 100%
+    );
+    opacity: 0;
+    visibility: hidden;
+}
+.container:hover{
+    gap: 0;
+}
+.container li:hover{
+    flex: 0 1 260px;
+    scale: 1.1;
+    z-index: 10;
+    opacity: 1;
+}
+.container li img {
+}
+.container li:hover .content{
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+
+}
+.container li:hover span{
+    scale: 1;
+    opacity: 1;
+    visibility: visible;
+}
